@@ -16,7 +16,7 @@ function updateFinalValues() {
 // Essa função envia os valores finais atualizados para o servidor através de uma requisição AJAX.
 function sendUpdatedValuesToServer() {
     // Seleciona os elementos de texto dos valores finais dos eixos X, Y, Z e R.
-    const finalVals = ['#last_x', '#last_y', '#last_z', '#las'];
+    const finalVals = ['#last_x', '#last_y', '#last_z', '#last_r'];
 
     // Cria um objeto com os valores finais de cada eixo.
     const data = finalVals.reduce((acc, curr) => {
