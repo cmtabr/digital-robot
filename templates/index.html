@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	</head>
+	<body onload="updateFinalValues()">
+		<div class="container">
+			<div class="card m-3">
+				<div class="card-body">
+					<div class="row">
+						<div class="col center">
+					  		<h3>Eixo X</h3>
+						</div>
+						<div class="col center">
+					  		<h3>Eixo Y</h3>
+						</div>
+						<div class="col center">
+					  		<h3>Eixo Z</h3>
+						</div>
+						<div class="col center">
+					  		<h3>Eixo R</h3>
+						</div>
+				  	</div>
+				  	<div class="row">
+						<div class="col center">
+					  		<h3 id="x">{{x}}</h3>
+						</div>
+						<div class="col center">
+					  		<h3 id="y">{{y}}</h3>
+						</div>
+						<div class="col center">
+					  		<h3 id="z">{{z}}</h3>
+						</div>
+						<div class="col center">
+					  		<h3 id="r">{{r}}</h3>
+						</div>
+				  	</div>
+				</div>
+			</div>
+			<br>
+			<div class = "form-container">
+				<form method="POST" action="/data">
+					<div class="form-group">
+						<label for="x">Eixo X:</label>
+						<input type="number" class="form-control" id="x" name="x" required>
+					</div>
+					<div class="form-group">
+						<label for="y">Eixo Y:</label>
+						<input type="number" class="form-control" id="y" name="y" required>
+					</div>
+					<div class="form-group">
+						<label for="z">Eixo Z:</label>
+						<input type="number" class="form-control" id="z" name="z" required>
+					</div>
+					<div class="form-group">
+						<label for="r">Eixo R:</label>
+						<input type="number" class="form-control" id="r" name="r" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+            	</form>
+				<div class = "explanation">
+					<h3>Explicação</h3>
+					<p>Este é um exemplo de como utilizar o Flask para criar uma aplicação web que recebe dados de um formulário e os envia para um banco de dados. Estes dados serão utilizados 
+					para realizar a movimentação de um componente 2D em um jogo desenvolvido em GDScript. O componente 2D é um personagem que se move em um cenário 2D, e os dados serão recebidos através de requisições HTTP.</p>
+					</p>
+				</div>
+			</div>            
+		</div>
+	</body>
+</html>
