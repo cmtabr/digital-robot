@@ -8,4 +8,3 @@ class Axis(Base):
     x = Column(Integer, nullable=False)
     y = Column(Integer, nullable=False)
     z = Column(Integer, nullable=False)
-    r = Column(Integer, nullable=False)

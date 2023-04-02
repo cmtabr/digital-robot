@@ -18,19 +18,19 @@ def index():
     try:        
         session = Session()
         last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
-        x, y, z, r = last_entry.x, last_entry.y, last_entry.z, last_entry.r
+        x, y, z = last_entry.x, last_entry.y, last_entry.z
         session.close()
         
     except:
-        x, y, z, r = 0, 0, 0, 0
+        x, y, z = 0, 0, 0
 
-    return render_template('index.html', x=x, y=y, z=z, r=r)
+    return render_template('index.html', x=x, y=y, z=z)
 
 # Rota para receber os dados do formulário via POST e inseri-los na tabela 'axis'
 @app.route('/data', methods=['POST'])
 def post():
-    x, y, z, r = int(request.form['x']), int(request.form['y']), int(request.form['z']), int(request.form['r'])
-    new_entry = Axis(x=x, y=y, z=z, r=r)
+    x, y, z = int(request.form['x']), int(request.form['y']), int(request.form['z'])
+    new_entry = Axis(x=x, y=y, z=z)
     session = Session()
     session.add(new_entry)
     session.commit()

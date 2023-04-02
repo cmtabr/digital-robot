@@ -45,8 +45,8 @@ class Values {
 class App {
     constructor() {
         this.Values = new Values(
-            ['#x', '#y', '#z', '#r'],
-            ['#last_x', '#last_y', '#last_z', '#last_r']
+            ['#x', '#y', '#z'],
+            ['#last_x', '#last_y', '#last_z']
         );
     }
 
