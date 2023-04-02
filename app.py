@@ -15,9 +15,14 @@ Session = sessionmaker(bind=engine)
 # Rota principal, que exibe a última linha da tabela 'axis'
 @app.route('/')
 def index():
-    session = Session()
-    last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
-    x, y, z, r = last_entry.x, last_entry.y, last_entry.z, last_entry.r
+    try:        
+        session = Session()
+        last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
+        x, y, z, r = last_entry.x, last_entry.y, last_entry.z, last_entry.r
+
+    except:
+        x, y, z, r = 0, 0, 0, 0
+
     return render_template('index.html', x=x, y=y, z=z, r=r)
 
 # Rota para receber os dados do formulário via POST e inseri-los na tabela 'axis'
