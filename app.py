@@ -19,7 +19,8 @@ def index():
         session = Session()
         last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
         x, y, z, r = last_entry.x, last_entry.y, last_entry.z, last_entry.r
-
+        session.close()
+        
     except:
         x, y, z, r = 0, 0, 0, 0
 
