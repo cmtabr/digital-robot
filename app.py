@@ -41,7 +41,7 @@ def post():
 def get():
     session = Session()
     last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
-    response = {'id': last_entry.id, 'x': last_entry.x, 'y': last_entry.y, 'z': last_entry.z, 'r': last_entry.r}
+    response = {'id': last_entry.id, 'x': last_entry.x, 'y': last_entry.y, 'z': last_entry.z}
     return jsonify(response)
 
 # Executa o servidor Flask
