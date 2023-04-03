@@ -4,7 +4,7 @@ func _process(delta):
 	$HTTPRequest.request("https://api-flask-digital-robot.onrender.com/data", [], false, HTTPClient.METHOD_GET)
 
 func _on_request_error(error):
-	print("Erro na solicitação: ", error)
+	print(error)
 
 func _on_HTTPRequest_request_completed(result, response_code, _headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
@@ -20,7 +20,7 @@ func _on_HTTPRequest_request_completed(result, response_code, _headers, body):
 		proportion(z)
 
 	else:
-		print("Erro na solicitação: ", response_code)
+		print(response_code)
 
 func proportion(z):
 	$Sprite.scale.x = z/100
