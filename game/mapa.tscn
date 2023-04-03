@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbahpedc571sq"]
+
+[ext_resource type="Texture2D" uid="uid://4q3jdrjcjjk2" path="res://img/plane.png" id="1_hvola"]
+[ext_resource type="Script" path="res://mapa.gd" id="1_wpiqu"]
+[ext_resource type="Texture2D" uid="uid://wcthaahqchxw" path="res://layers/sky.png" id="3_rnwa5"]
+[ext_resource type="Texture2D" uid="uid://1okuvaafm4ab" path="res://layers/cloud_lonely.png" id="4_4weq7"]
+[ext_resource type="Texture2D" uid="uid://c4d63lhjn05qw" path="res://layers/glacial_mountains.png" id="5_7c5qn"]
+[ext_resource type="Texture2D" uid="uid://cbc2ergcyc31d" path="res://layers/clouds_bg.png" id="6_5cujf"]
+[ext_resource type="Texture2D" uid="uid://y4k57i3i8gew" path="res://layers/clouds_mg_1.png" id="7_y5n7j"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wpiqu")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(282, 361)
+scale = Vector2(0.240051, 0.262805)
+texture = ExtResource("1_hvola")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(747, 374.5)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("3_rnwa5")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(185, 550)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("4_4weq7")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(700, 418)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("4_4weq7")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(-80.0001, 300)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("4_4weq7")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="mountain" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(743, 374)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("5_7c5qn")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cloud_light" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(748, 563.75)
+scale = Vector2(3.88021, 3.40046)
+texture = ExtResource("6_5cujf")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cloud_bottom" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(744, 401)
+scale = Vector2(3.88021, 3.44907)
+texture = ExtResource("7_y5n7j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -12,20 +12,6 @@ DATABASE_URL = 'sqlite:///database.db'
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 
-# Rota principal, que exibe a última linha da tabela 'axis'
-@app.route('/')
-def index():
-    try:        
-        session = Session()
-        last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
-        x, y, z = last_entry.x, last_entry.y, last_entry.z
-        session.close()
-        
-    except:
-        x, y, z = 0, 0, 0
-
-    return render_template('index.html', x=x, y=y, z=z)
-
 # Rota para receber os dados do formulário via POST e inseri-los na tabela 'axis'
 @app.route('/data', methods=['POST'])
 def post():
@@ -43,6 +29,11 @@ def get():
     last_entry = session.query(Axis).order_by(Axis.id.desc()).first()
     response = {'id': last_entry.id, 'x': last_entry.x, 'y': last_entry.y, 'z': last_entry.z}
     return jsonify(response)
+
+# Rota principal, que exibe a página html da aplicação
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 # Executa o servidor Flask
 if __name__ == '__main__':
