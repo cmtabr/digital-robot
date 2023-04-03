@@ -1,7 +1,7 @@
 extends Node2D
 
 func _process(delta):
-	$HTTPRequest.request("https://digital-robot.onrender.com/data", [], false, HTTPClient.METHOD_GET)
+	$HTTPRequest.request("https://api-flask-digital-robot.onrender.com/data", [], false, HTTPClient.METHOD_GET)
 
 func _on_request_error(error):
 	print("Erro na solicitação: ", error)
